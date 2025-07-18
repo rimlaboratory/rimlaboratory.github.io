@@ -5,7 +5,8 @@
     {% endif %}
     <!-- Bluesky -->
     {% if member.social.bluesky%}
-    <li class="list-inline-item"><a target="blank" href="{{member.social.bluesky}}"><i class="fa-brands fa-bluesky"></li>
+    <li class="list-inline-item"><a target="_blank" href="{{ member.social.bluesky }}">
+    <img src="/assets/images/bluesky.png" alt="Bluesky" style="width: 20px;"></a></li>
     {% endif %}
     <!-- Github -->
     {% if member.social.github %}
