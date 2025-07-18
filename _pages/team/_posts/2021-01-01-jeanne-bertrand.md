@@ -1,6 +1,6 @@
 ---
 layout: member
-category: staff
+category: student
 title: Jeanne Bertrand
 image: jeanne.jpg
 role: Project Manager
