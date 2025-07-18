@@ -23,22 +23,3 @@ permalink: /team/
 </div>
 </ul>
 
-<!-- Join Us -->
-<h2 class="mb-3"><a id="new"></a>Join Us</h2>
-
-{% assign members = site.posts | where: 'category', 'new' | sort: 'date' %}
-<ul class="list-unstyled">
-<div class="row">
-{% for member in members%}
-    {% assign ncols = 2 %}
-    {% assign i = forloop.index0 | modulo: ncols %}
-        <div class="col">
-            {%- include team_member.html -%}
-        </div>
-    {% if i == 1 %}
-        </div><div class="row">
-    {% endif %}
-{% endfor %}
-</div>
-</ul>
-
