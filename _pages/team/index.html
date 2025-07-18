@@ -4,8 +4,8 @@ layout: page
 permalink: /team/
 ---
 
-<!-- Principal Investigator -->
-<h2 class="mb-3"><a id="PI"></a>Principal Investigator</h2>
+<!-- Current Members -->
+<h2 class="mb-3"><a id="PI"></a>Current Members</h2>
 
 {% assign members = site.posts | where: 'category', 'PI' | sort: 'date' %}
 <ul class="list-unstyled">
@@ -23,10 +23,10 @@ permalink: /team/
 </div>
 </ul>
 
-<!-- Students -->
-<h2 class="mb-3"><a id="student"></a>Students</h2>
+<!-- Join Us -->
+<h2 class="mb-3"><a id="new"></a>Join Us</h2>
 
-{% assign members = site.posts | where: 'category', 'student' | sort: 'date' %}
+{% assign members = site.posts | where: 'category', 'new' | sort: 'date' %}
 <ul class="list-unstyled">
 <div class="row">
 {% for member in members%}
@@ -42,21 +42,3 @@ permalink: /team/
 </div>
 </ul>
 
-<!-- Alumni -->
-<h2 class="mb-3"><a id="alumni"></a>Alumni</h2>
-
-{% assign members = site.posts | where: 'category', 'alumni' | sort: 'date' %}
-<ul class="list-unstyled">
-<div class="row">
-{% for member in members%}
-    {% assign ncols = 2 %}
-    {% assign i = forloop.index0 | modulo: ncols %}
-        <div class="col">
-            {%- include team_member.html -%}
-        </div>
-    {% if i == 1 %}
-        </div><div class="row">
-    {% endif %}
-{% endfor %}
-</div>
-</ul>
