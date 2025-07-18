@@ -5,9 +5,9 @@ permalink: /team/
 ---
 
 <!-- Current Members -->
-<h2 class="mb-3"><a id="PI"></a>Current Members</h2>
+<h2 class="mb-3"><a id="current"></a>Members</h2>
 
-{% assign members = site.posts | where: 'category', 'PI' | sort: 'date' %}
+{% assign members = site.posts | where: 'category', 'current' | sort: 'date' %}
 <ul class="list-unstyled">
 <div class="row">
 {% for member in members%}
