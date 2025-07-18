@@ -1,24 +1,17 @@
 ---
 layout: member
-category: staff
-title: 'Fabien Reyal'
+title: 'Ellen Rim'
 image: 'fabien.jpg'
-role: Lab director
-permalink: 'team/fabien-reyal'
+role: Assistant Professor of Chemical Engineering
+permalink: 'team/ellen-rim'
 social:
-    twitter: https://twitter.com/fabienreyal
-    linkedin: https://linkedin.com/in/fabienreyal
-    google-scholar: https://scholar.google.com/citations?user=VRZhLFsAAAAJ&hl=en&oi=ao
+    twitter: https://bsky.app/profile/ellenrim.bsky.social
+    linkedin: 
+    google-scholar: https://scholar.google.com/citations?user=oNlC-0MAAAAJ&hl=en
     github:
     website:
     orcid:
-education:
+education: 
 ---
 
-Pr. Fabien Reyal was a student of the Xavier Bichat (Paris VII) faculty of medicine and was appointed Paris hospitals resident in 1995. After completing his internship in obstetrics and gynecology, he was appointed assistant chief resident at the Paris VII Xavier Bichat hospital in 2004.
-
-He ultimately decided to focus on gynecological, breast, and reconstructive cancer surgery, taking on the role of specialist assistant (2007) and specialist practitioner (2008) at Institut Curie.
-
-His scientific training led him to obtain a thesis in science from the Paris XI faculty and authorization to conduct research at the Paris VI faculty. He spent a year as a Researcher at the Amsterdam center for cancer research (2006).
-
-Today, he is head of the gynecological, breast and reconstructive cancer surgery department and leads a research team working on resistance to breast cancer treatment. Since September 2018, he is Profesor at Université Paris Descartes.
+Ellen is an Assistant Professor of Chemical Engineering at Stanford University. She received her B.A. from Harvard University and completed her Ph.D. in Developmental Biology at Stanford University under the mentorship of Dr. Roeland Nusse. She then trained with Dr. Pamela Ronald in Plant Pathology at UC Davis as a Life Sciences Research Foundation postdoctoral fellow. She is interested in applying new synthetic biology tools to tackle agricultural challenges faced by smallholder farmers. Ellen is from Seoul, Korea.
