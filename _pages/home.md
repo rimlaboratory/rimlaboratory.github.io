@@ -4,4 +4,3 @@ layout: homelay
 permalink: /
 ---
 
-**Harnessing synthetic biology to engineer resilient crops**
