@@ -28,15 +28,23 @@ layout: default
   </div>
 </div>
 
-<section class="news mt-5">
-  <div class="container">
-    <h2 class="mb-4">News</h2>
-    <ul class="list-unstyled">
-      {% for item in site.data.news %}
-        <li class="mb-3">
-          <strong>{{ item.date }}:</strong> {{ item.content | markdownify }}
-        </li>
-      {% endfor %}
-    </ul>
+<section id="news" class="my-5">
+  <h2 class="mb-4">Recent News</h2>
+
+  <div class="row">
+    {% for item in site.data.news %}
+      <div class="col-md-6 mb-4">
+        <div class="card h-100">
+          {% if item.image %}
+            <img src="{{ item.image }}" class="card-img-top" alt="{{ item.title }}">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text"><small class="text-muted">{{ item.date }}</small></p>
+            <p class="card-text">{{ item.content }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
   </div>
 </section>
