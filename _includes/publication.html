@@ -18,18 +18,10 @@
       {{ date[0] }},
 
       <!-- title -->
-      "{{ publi.title }}",
+      "{{ publi.title }}"
 
       <!-- journal -->
       <span class="font-italic">{{ publi['container-title'] }}</span>
-
-      <!-- volume, issue, page -->
-      {% if publi.volume or publi.issue or publi.page %}
-        ,
-        {% if publi.volume %}vol. {{ publi.volume }}{% endif %}
-        {% if publi.issue %}, no. {{ publi.issue }}{% endif %}
-        {% if publi.page %}, pp. {{ publi.page }}{% endif %}
-      {% endif %}
 
       <!-- DOI -->
       {% if publi.DOI %}
