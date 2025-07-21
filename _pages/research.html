@@ -10,17 +10,11 @@ permalink: /research/
 {% endcapture %}
 {{ research_md | markdownify }}
 
+<h3 class="mt-4">Recent Publications</h3>
 <ul class="list-unstyled">
   {% assign pub_list = site.data.publications | sort: 'issued.date-parts[0][0]' | reverse %}
-  {% assign grouped = pub_list | group_by_exp: "pub", "pub.issued['date-parts'][0][0]" %}
 
-  {% for group in grouped %}
-    {% assign year = group.name | to_integer %}
-    <h3 class="mt-4">{{ year }}</h3>
-
-    {% assign sorted_items = group.items | sort: "issued.date-parts[0][1]" | reverse %}  {# Sort by month if available #}
-    {% for publi in sorted_items %}
-      {%- include publication.html publi=publi -%}
-    {% endfor %}
+  {% for publi in pub_list %}
+    {%- include publication.html publi=publi -%}
   {% endfor %}
 </ul>
