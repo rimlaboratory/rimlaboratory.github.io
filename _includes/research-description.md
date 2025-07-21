@@ -16,5 +16,8 @@ We begin with a specific need and identify key protein targets to address it. We
 * Photosynthetic efficiency 
 
 
-<img src="/assets/images/directedevolution.png" alt="Directed evolution" style="max-width: 100%; height: auto; border-radius: 10px;">
-
+<div style="text-align: center;">
+  <img src="/assets/images/directedevolution.png" 
+       alt="Directed evolution" 
+       style="max-width: 60%; height: auto; border-radius: 10px;">
+</div>
