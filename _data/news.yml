@@ -1,21 +1,6 @@
-- date: 05/09/19
-  title: "Another great thing"
+- date: 08/01/25
+  title: "Hello, World!"
   tags:
-    - some
-    - tags
-  content: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Eu turpis egestas pretium aenean. Luctus venenatis lectus magna fringilla
-    urna porttitor. Lorem ipsum dolor sit amet. Pellentesque massa placerat
-    duis ultricies. Commodo viverra maecenas accumsan lacus vel.
-
-- date: 03/09/19
-  title: "Something great"
-  tags:
-    - some
-    - tags
-  content: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Eu turpis egestas pretium aenean. Luctus venenatis lectus magna fringilla
-    urna porttitor. Lorem ipsum dolor sit amet. Pellentesque massa placerat
-    duis ultricies. Commodo viverra maecenas accumsan lacus vel.
+    - admin
+  image: "/assets/images/news/empty.jpg"
+  content: The Rim Lab will open in the Shriram Center for Bioengineering and Chemical Engineering in September 2025. We welcome creative engineers and biologists who are excited about protein engineering, plants, and sustainability. First, we're going shopping. 
