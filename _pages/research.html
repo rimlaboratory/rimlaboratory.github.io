@@ -11,16 +11,16 @@ permalink: /research/
 {{ research_md | markdownify }}
 
 <ul class="list-unstyled">
-    {% assign pub_list = site.data.publications | sort: 'Publication Year' | group_by: 'Publication Year' | reverse %}
+  {% assign pub_list = site.data.publications | sort: 'Publication Year' | group_by: 'Publication Year' | reverse %}
 
-    {% for group in pub_list %}
+  {% for group in pub_list %}
+    {% assign year = group.name | to_integer %}
+    <h3 class="mt-4">{{ year }}</h3>
 
-        {% assign year = group.name | to_integer %}
-
-        <h3 class="mt-4">{{ year }}</h3>
-        {% for publi in group.items %}
-            {%- include publication.html -%}
-        {% endfor %}
-
+    {% assign sorted_items = group.items | sort: 'Title' %}  {# fallback if no finer date #}
+    {% for publi in sorted_items %}
+      {%- include publication.html publi=publi -%}
     {% endfor %}
+  {% endfor %}
+  
 </ul>
