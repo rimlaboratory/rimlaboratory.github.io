@@ -1,13 +1,4 @@
 <ul class="list-inline list-unstyled">
-    <!-- Twitter -->
-    {% if member.social.twitter %}
-    <li class="list-inline-item"><a target="blank" href="{{member.social.twitter}}"><i class="fab fa-twitter" style="color: #1DA1F2;"></i></a></li>
-    {% endif %}
-    <!-- Bluesky -->
-    {% if member.social.bluesky%}
-    <li class="list-inline-item"><a target="_blank" href="{{ member.social.bluesky }}">
-    <img src="/assets/images/bluesky.png" alt="Bluesky" style="width: 20px;"></a></li>
-    {% endif %}
     <!-- Github -->
     {% if member.social.github %}
     <li class="list-inline-item"><a target="blank" href="{{member.social.github}}"><i class="fab fa-github" style="color: #000000;"></i></a></li>
@@ -19,5 +10,14 @@
     <!-- Google Scholar -->
     {% if member.social.google-scholar %}
     <li class="list-inline-item"><a target="blank" href="{{member.social.google-scholar}}"><i class="fab fa-google" style="color: #4285F4;"></i></a></li>
+    {% endif %}
+    <!-- Twitter -->
+    {% if member.social.twitter %}
+    <li class="list-inline-item"><a target="blank" href="{{member.social.twitter}}"><i class="fab fa-twitter" style="color: #1DA1F2;"></i></a></li>
+    {% endif %}
+    <!-- Bluesky -->
+    {% if member.social.bluesky%}
+    <li class="list-inline-item"><a target="_blank" href="{{ member.social.bluesky }}">
+    <img src="/assets/images/bluesky.png" alt="Bluesky" style="width: 20px;"></a></li>
     {% endif %}
 </ul>
