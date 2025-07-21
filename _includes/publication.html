@@ -13,15 +13,19 @@
         {% endfor %},
       {% endif %}
 
-      <!-- year -->
-      {% assign date = publi.issued["date-parts"][0] %}
-      {{ date[0] }},
+      <!-- year (fallback-safe) -->
+      {% assign issued_parts = publi.issued["date-parts"] %}
+      {% if issued_parts and issued_parts[0] and issued_parts[0][0] %}
+        {{ issued_parts[0][0] }},
+      {% endif %}
 
       <!-- title -->
       "{{ publi.title }}"
 
       <!-- journal -->
-      <span class="font-italic">{{ publi['container-title'] }}</span>
+      {% if publi['container-title'] %}
+        <span class="font-italic">{{ publi['container-title'] }}</span>
+      {% endif %}
 
       <!-- DOI -->
       {% if publi.DOI %}
