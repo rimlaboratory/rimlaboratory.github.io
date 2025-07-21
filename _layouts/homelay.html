@@ -27,3 +27,16 @@ layout: default
     </p>
   </div>
 </div>
+
+<section class="news mt-5">
+  <div class="container">
+    <h2 class="mb-4">News</h2>
+    <ul class="list-unstyled">
+      {% for item in site.data.news %}
+        <li class="mb-3">
+          <strong>{{ item.date }}:</strong> {{ item.content | markdownify }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
