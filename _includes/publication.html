@@ -25,6 +25,8 @@
       <!-- journal -->
       {% if publi['container-title'] %}
         <span class="font-italic">{{ publi['container-title'] }}</span>
+      {% elsif publi.URL contains "biorxiv" %}
+        <span class="font-italic">bioRxiv</span>
       {% endif %}
 
       <!-- DOI -->
