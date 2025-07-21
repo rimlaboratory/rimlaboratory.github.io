@@ -123,7 +123,7 @@ Just add a new entry to the list like this:
 
 ### Add news
 
-Publications are stored as `.yml` file under [_data/news.yml](_data/news.yml).
+News feed is stored as `.yml` file under [_data/news.yml](_data/news.yml).
 
 An entry looks like the following:
 
@@ -133,6 +133,7 @@ An entry looks like the following:
   tags:
     - some
     - tags
+  image: can attach an image
   content: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Eu turpis egestas pretium aenean. Luctus venenatis lectus magna fringilla
