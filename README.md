@@ -1,4 +1,4 @@
-# RT2 Lab Website
+# Rim Lab Website
 
 This website is built with [Jekyll](https://jekyllrb.com/).
 
@@ -83,11 +83,13 @@ category: staff
 title: Name of the member
 image: Image filename, stored in /images
 role: Member role
+email: member[at]stanford[dot]edu
 permalink: 'team/member-slug'
 social:
+    google-scholar: https://scholar.google.com/citations?user=member-id
+    bluesky: https://bsky.app/member
     twitter: https://twitter.com/member
     linkedin: https://linkedin.com/in/member
-    google-scholar: https://scholar.google.com/citations?user=member-id
 education:
  - Education 1
  - Education 2
