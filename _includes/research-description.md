@@ -19,5 +19,5 @@ We begin with a specific need and identify key protein targets to address it. We
 <div style="text-align: center;">
   <img src="/assets/images/directedevolution.png" 
        alt="Directed evolution" 
-       style="max-width: 500px; height: auto; border-radius: 10px;">
+       style="max-width: 300px; height: auto; border-radius: 10px;">
 </div>
