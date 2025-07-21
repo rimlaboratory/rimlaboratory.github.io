@@ -8,10 +8,10 @@
     <h5 class="mt-0" style="font-style: normal;">
       <a href="{{ member.url }}" style="color: #8C1515; font-style: normal;">{{ member.title }}</a>
     </h5>
-    <p style="font-size: 1rem;">{{ member.role }}</p>
-    
+    <p style="font-size: 1rem; margin-bottom: 0;">{{ member.role }}</p>
+
     {% if member.email %}
-    <p style="font-size: 1rem;">
+    <p style="font-size: 1rem; margin-top: 0;">
       <a href="mailto:{{ member.email }}" style="color: #555;">{{ member.email }}</a>
     </p>
     {% endif %}
