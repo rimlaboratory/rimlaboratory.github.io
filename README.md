@@ -34,6 +34,8 @@ make serve;
 
 ### Publications from Zotero
 
+Export the publication collection as a CSL JSON file and add to _data as publications.json.
+
 ``` python
 import json
 
