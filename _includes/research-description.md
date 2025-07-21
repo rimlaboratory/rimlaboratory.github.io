@@ -15,8 +15,9 @@ We begin with a specific need and identify key protein targets to address it. We
 * Resilience to environmental stress 
 * Photosynthetic efficiency 
 
+
 <div style="display: flex; justify-content: center; margin-top: 1rem;">
   <img src="/assets/images/directedevolution.png" 
        alt="Directed evolution" 
-       style="width: 500px; max-width: 100%; height: auto; border-radius: 10px;">
+       style="width: 500px; max-width: 100%; height: auto; border-radius: 10px; margin-left: auto; margin-right: auto;">
 </div>
