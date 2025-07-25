@@ -1,55 +1,53 @@
+{% assign pubs_sorted = site.data.publications | sort: "issued.date-parts[0][0]" | reverse %}
+
 {% assign seen_dois = "" %}
-{% assign filtered_pubs = "" | split: "" %}
 
-{% for publi in site.data.publications %}
-  {% assign doi_key = publi.DOI | strip | downcase %}
-  {% unless seen_dois contains doi_key %}
-    {% assign seen_dois = seen_dois | append: doi_key | append: "|" %}
+<ul class="list-unstyled">
+  {% for publi in pubs_sorted %}
+    {% assign doi_key = publi.DOI | strip | downcase %}
+    {% unless seen_dois contains doi_key %}
+      {% assign seen_dois = seen_dois | append: doi_key | append: "|" %}
 
-    {% assign issued_parts = publi.issued["date-parts"] %}
-    {% assign year = issued_parts[0][0] | default: 0 %}
-    {% assign publi = publi | merge: {"year": year} %}
-    {% assign filtered_pubs = filtered_pubs | push: publi %}
-  {% endunless %}
-{% endfor %}
+      <!-- Extract year during rendering -->
+      {% assign issued_parts = publi.issued["date-parts"] %}
+      {% assign year = issued_parts[0][0] | default: 0 %}
 
-{% assign sorted_pubs = filtered_pubs | sort: "year" | reverse %}
+      <li class="media mb-1">
+        <div class="media-body">
+          <p>
+            <!-- title -->
+            <strong>{{ publi.title }}</strong>
 
-{% for publi in sorted_pubs %}
-  <li class="media mb-1">
-    <div class="media-body">
-      <p>
-        <!-- title -->
-        <strong>{{ publi.title }}</strong>
+            <!-- authors -->
+            <br>
+            {% assign authors = publi.author %}
+            {% if authors.size > 3 %}
+              {% for a in authors limit:3 %}
+                {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
+              {% endfor %} <i>et al.</i>,
+            {% else %}
+              {% for a in authors %}
+                {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
+              {% endfor %},
+            {% endif %}
 
-        <!-- authors (shortened to first 3 + et al. if more than 3) -->
-        <br>
-        {% assign authors = publi.author %}
-        {% if authors.size > 3 %}
-          {% for a in authors limit:3 %}
-            {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
-          {% endfor %} <i>et al.</i>,
-        {% else %}
-          {% for a in authors %}
-            {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
-          {% endfor %},
-        {% endif %}
+            <!-- year -->
+            {{ year }},
 
-        <!-- year -->
-        {{ publi.year }},
+            <!-- journal -->
+            {% if publi['container-title'] %}
+              <span class="font-italic">{{ publi['container-title'] }}</span>
+            {% elsif publi.URL contains "biorxiv" %}
+              <span class="font-italic">bioRxiv</span>
+            {% endif %}
 
-        <!-- journal -->
-        {% if publi['container-title'] %}
-          <span class="font-italic">{{ publi['container-title'] }}</span>
-        {% elsif publi.URL contains "biorxiv" %}
-          <span class="font-italic">bioRxiv</span>
-        {% endif %}
-
-        <!-- DOI -->
-        {% if publi.DOI %}
-          <br><a href="https://doi.org/{{ publi.DOI }}" style="color: #006B6A;">DOI: {{ publi.DOI }}</a>
-        {% endif %}
-      </p>
-    </div>
-  </li>
-{% endfor %}
+            <!-- DOI -->
+            {% if publi.DOI %}
+              <br><a href="https://doi.org/{{ publi.DOI }}" style="color: #006B6A;">DOI: {{ publi.DOI }}</a>
+            {% endif %}
+          </p>
+        </div>
+      </li>
+    {% endunless %}
+  {% endfor %}
+</ul>
