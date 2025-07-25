@@ -5,16 +5,39 @@ excerpt: Rim Lab -- Research.
 permalink: /research/
 ---
 
-{% capture research_md %}
-  {% include research-description.md %}
-{% endcapture %}
-{{ research_md | markdownify }}
+<!-- Full-width Hero Section -->
+<section style="width: 100vw; margin-left: calc(-50vw + 50%); position: relative; overflow: hidden;">
+  <img src="/assets/images/shriram_wall.jpg"
+       alt="Hero image"
+       style="width: 100%; max-height: 400px; object-fit: cover; filter: brightness(50%); display: block;">
 
-<h3 class="mt-4">Recent Publications</h3>
-<ul class="list-unstyled">
-  {% assign pub_list = site.data.publications | sort: 'issued.date-parts[0][0]' | reverse %}
+  <!-- Centered Title Overlay -->
+  <div style="
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    width: 90%;
+    max-width: 1000px;
+  ">
+    <h1 style="font-size: 2.5rem; font-weight: 500; margin: 0;">{{ page.title }}</h1>
+  </div>
+</section>
 
-  {% for publi in pub_list %}
-    {%- include publication.html publi=publi -%}
-  {% endfor %}
-</ul>
+<!-- Main Content -->
+<div class="container mt-5">
+  {% capture research_md %}
+    {% include research-description.md %}
+  {% endcapture %}
+  {{ research_md | markdownify }}
+
+  <h3 class="mt-4">Recent Publications</h3>
+  <ul class="list-unstyled">
+    {% assign pub_list = site.data.publications | sort: 'issued.date-parts[0][0]' | reverse %}
+    {% for publi in pub_list %}
+      {%- include publication.html publi=publi -%}
+    {% endfor %}
+  </ul>
+</div>
