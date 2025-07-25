@@ -34,7 +34,7 @@ layout: default
   </div>
 </section>
 
-<!-- News Section: Moved outside of hero -->
+<!-- News Section -->
 <section class="container mt-5">
   <h2 class="mb-4">News</h2>
   <ul class="list-unstyled">
@@ -44,8 +44,8 @@ layout: default
           <img src="{{ item.image }}" alt="News image" style="width: 100px; height: auto; margin-right: 1rem;">
         {% endif %}
         <div>
-          <strong>{{ item.date }}:</strong>
-          {{ item.text | markdownify }}
+          <strong>{{ item.date }} — {{ item.title }}</strong><br>
+          {{ item.content | markdownify }}
         </div>
       </li>
     {% endfor %}
