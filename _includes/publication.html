@@ -1,49 +1,54 @@
-{% assign pubs_sorted = site.data.publications | sort: "issued.date-parts[0][0]" | reverse %}
+{% assign seen_titles = "" %}
+{% assign filtered_pubs = "" | split: "" %}
 
-{% assign seen_dois = "" %}
+{% for publi in site.data.publications %}
+  {% assign title_key = publi.title | strip | downcase %}
+  {% unless seen_titles contains title_key %}
+    {% assign seen_titles = seen_titles | append: title_key | append: "|" %}
 
-{% for publi in pubs_sorted %}
-  {% unless seen_dois contains publi.DOI %}
-    {% assign seen_dois = seen_dois | append: publi.DOI | append: "," %}
-
-    <li class="media mb-1">
-      <div class="media-body">
-        <p>
-  
-          <!-- title -->
-          "{{ publi.title }}"
-        
-          <!-- authors (shortened to first 3 + et al. if more than 3) -->
-          {% assign authors = publi.author %}
-          {% if authors.size > 3 %}
-            {% for a in authors limit:3 %}
-              {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
-            {% endfor %} <i>et al.</i>,
-          {% else %}
-            {% for a in authors %}
-              {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
-            {% endfor %},
-          {% endif %}
-
-          <!-- year (fallback-safe) -->
-          {% assign issued_parts = publi.issued["date-parts"] %}
-          {% if issued_parts and issued_parts[0] and issued_parts[0][0] %}
-            {{ issued_parts[0][0] }},
-          {% endif %}
-
-          <!-- journal -->
-          {% if publi['container-title'] %}
-            <span class="font-italic">{{ publi['container-title'] }}</span>
-          {% elsif publi.URL contains "biorxiv" %}
-            <span class="font-italic">bioRxiv</span>
-          {% endif %}
-
-          <!-- DOI -->
-          {% if publi.DOI %}
-            <br><a href="https://doi.org/{{ publi.DOI }}" style="color: #006B6A;">DOI: {{ publi.DOI }}</a>
-          {% endif %}
-        </p>
-      </div>
-    </li>
+    {%- assign issued_parts = publi.issued["date-parts"] %}
+    {%- assign year = issued_parts[0][0] | default: 0 -%}
+    {% assign publi = publi | merge: {"year": year} %}
+    {% assign filtered_pubs = filtered_pubs | push: publi %}
   {% endunless %}
+{% endfor %}
+
+{% assign sorted_pubs = filtered_pubs | sort: "year" | reverse %}
+
+{% for publi in sorted_pubs %}
+  <li class="media mb-1">
+    <div class="media-body">
+      <p>
+        <!-- title -->
+        "{{ publi.title }}"
+
+        <!-- authors (shortened to first 3 + et al. if more than 3) -->
+        {% assign authors = publi.author %}
+        {% if authors.size > 3 %}
+          {% for a in authors limit:3 %}
+            {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
+          {% endfor %} <i>et al.</i>,
+        {% else %}
+          {% for a in authors %}
+            {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
+          {% endfor %},
+        {% endif %}
+
+        <!-- year -->
+        {{ publi.year }},
+
+        <!-- journal -->
+        {% if publi['container-title'] %}
+          <span class="font-italic">{{ publi['container-title'] }}</span>
+        {% elsif publi.URL contains "biorxiv" %}
+          <span class="font-italic">bioRxiv</span>
+        {% endif %}
+
+        <!-- DOI -->
+        {% if publi.DOI %}
+          <br><a href="https://doi.org/{{ publi.DOI }}" style="color: #006B6A;">DOI: {{ publi.DOI }}</a>
+        {% endif %}
+      </p>
+    </div>
+  </li>
 {% endfor %}
