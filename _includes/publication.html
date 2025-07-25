@@ -1,52 +1,44 @@
-{% assign pubs = site.data.publications %}
-
-{%- comment -%}
-  Optional debug: show total and unique DOI count
-{%- endcomment -%}
-{%- assign all_dois = pubs | map: "DOI" | compact | uniq -%}
-{%- comment -%}
-  Total: {{ pubs | size }}, Unique DOIs: {{ all_dois | size }}
-{%- endcomment -%}
-
-{% assign pubs_sorted = pubs | sort: "issued.date-parts[0][0]" | reverse %}
+{% assign pubs_sorted = site.data.publications | sort: "issued.date-parts[0][0]" | reverse %}
 {% assign seen_dois = "" | split: "" %}
 
 <ul class="list-unstyled">
   {% for publi in pubs_sorted %}
     {% assign doi_key = publi.DOI | default: "" | strip | downcase %}
 
-    {% if doi_key != "" and seen_dois contains doi_key == false %}
-      {% assign seen_dois = seen_dois | push: doi_key %}
-      {% assign year = publi.issued["date-parts"][0][0] | default: "n.d." %}
+    {% if doi_key != "" %}
+      {% unless seen_dois contains doi_key %}
+        {% assign seen_dois = seen_dois | push: doi_key %}
+        {% assign year = publi.issued["date-parts"][0][0] | default: "n.d." %}
 
-      <li class="media mb-1">
-        <div class="media-body">
-          <p>
-            <strong>{{ publi.title }}</strong><br>
+        <li class="media mb-1">
+          <div class="media-body">
+            <p>
+              <strong>{{ publi.title }}</strong><br>
 
-            {% assign authors = publi.author %}
-            {% if authors.size > 3 %}
-              {% for a in authors limit:3 %}
-                {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
-              {% endfor %} <i>et al.</i>,
-            {% else %}
-              {% for a in authors %}
-                {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
-              {% endfor %},
-            {% endif %}
+              {% assign authors = publi.author %}
+              {% if authors.size > 3 %}
+                {% for a in authors limit:3 %}
+                  {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
+                {% endfor %} <i>et al.</i>,
+              {% else %}
+                {% for a in authors %}
+                  {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
+                {% endfor %},
+              {% endif %}
 
-            {{ year }},
+              {{ year }},
 
-            {% if publi['container-title'] %}
-              <span class="font-italic">{{ publi['container-title'] }}</span>
-            {% elsif publi.URL contains "biorxiv" %}
-              <span class="font-italic">bioRxiv</span>
-            {% endif %}
+              {% if publi['container-title'] %}
+                <span class="font-italic">{{ publi['container-title'] }}</span>
+              {% elsif publi.URL contains "biorxiv" %}
+                <span class="font-italic">bioRxiv</span>
+              {% endif %}
 
-            <br><a href="https://doi.org/{{ publi.DOI }}" style="color: #006B6A;">DOI: {{ publi.DOI }}</a>
-          </p>
-        </div>
-      </li>
+              <br><a href="https://doi.org/{{ publi.DOI }}" style="color: #006B6A;">DOI: {{ publi.DOI }}</a>
+            </p>
+          </div>
+        </li>
+      {% endunless %}
     {% endif %}
   {% endfor %}
 </ul>
