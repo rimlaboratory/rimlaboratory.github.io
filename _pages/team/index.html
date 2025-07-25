@@ -28,8 +28,10 @@ permalink: /team/
 <!-- Vertical spacer -->
 <div style="height: 3rem;"></div>
 
+{%- comment -%}
 <!-- Current Members -->
 <h2 class="mb-3"><a id="current"></a>Members</h2>
+{%- endcomment -%}
 
 {% assign members = site.posts | where: 'category', 'current' | sort: 'date' %}
 <ul class="list-unstyled">
