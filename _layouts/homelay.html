@@ -33,4 +33,21 @@ layout: default
     </p>
   </div>
 
+  <section class="container mt-5">
+  <h2 class="mb-4">News</h2>
+  <ul class="list-unstyled">
+    {% for item in site.data.news %}
+      <li class="mb-4 d-flex">
+        {% if item.image %}
+          <img src="{{ item.image }}" alt="News image" style="width: 100px; height: auto; margin-right: 1rem;">
+        {% endif %}
+        <div>
+          <strong>{{ item.date }}:</strong>
+          {{ item.text | markdownify }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
 </section>
