@@ -1,38 +1,43 @@
-<li class="media mb-1">
-  <div class="media-body">
-    <p>
-      <!-- authors (shortened to first 3 + et al. if more than 3) -->
-      {% assign authors = publi.author %}
-      {% if authors.size > 3 %}
-        {% for a in authors limit:3 %}
-          {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
-        {% endfor %} <i>et al.</i>,
-      {% else %}
-        {% for a in authors %}
-          {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
-        {% endfor %},
-      {% endif %}
+{% assign pubs_sorted_by_title = site.data.publications | sort: "title" %}
+{% assign pubs_sorted = pubs_sorted_by_title | sort: "issued.date-parts[0][0]" | reverse %}
 
-      <!-- year (fallback-safe) -->
-      {% assign issued_parts = publi.issued["date-parts"] %}
-      {% if issued_parts and issued_parts[0] and issued_parts[0][0] %}
-        {{ issued_parts[0][0] }},
-      {% endif %}
+{% for publi in pubs_sorted %}
+  <li class="media mb-1">
+    <div class="media-body">
+      <p>
+        <!-- authors (shortened to first 3 + et al. if more than 3) -->
+        {% assign authors = publi.author %}
+        {% if authors.size > 3 %}
+          {% for a in authors limit:3 %}
+            {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
+          {% endfor %} <i>et al.</i>,
+        {% else %}
+          {% for a in authors %}
+            {{ a.family }}, {{ a.given }}{% unless forloop.last %}; {% endunless %}
+          {% endfor %},
+        {% endif %}
 
-      <!-- title -->
-      "{{ publi.title }}"
+        <!-- year (fallback-safe) -->
+        {% assign issued_parts = publi.issued["date-parts"] %}
+        {% if issued_parts and issued_parts[0] and issued_parts[0][0] %}
+          {{ issued_parts[0][0] }},
+        {% endif %}
 
-      <!-- journal -->
-      {% if publi['container-title'] %}
-        <span class="font-italic">{{ publi['container-title'] }}</span>
-      {% elsif publi.URL contains "biorxiv" %}
-        <span class="font-italic">bioRxiv</span>
-      {% endif %}
+        <!-- title -->
+        "{{ publi.title }}"
 
-      <!-- DOI -->
-      {% if publi.DOI %}
-        <br><a href="https://doi.org/{{ publi.DOI }}">DOI: {{ publi.DOI }}</a>
-      {% endif %}
-    </p>
-  </div>
-</li>
+        <!-- journal -->
+        {% if publi['container-title'] %}
+          <span class="font-italic">{{ publi['container-title'] }}</span>
+        {% elsif publi.URL contains "biorxiv" %}
+          <span class="font-italic">bioRxiv</span>
+        {% endif %}
+
+        <!-- DOI -->
+        {% if publi.DOI %}
+          <br><a href="https://doi.org/{{ publi.DOI }}" style="color: #006B6A;">DOI: {{ publi.DOI }}</a>
+        {% endif %}
+      </p>
+    </div>
+  </li>
+{% endfor %}
