@@ -1,25 +1,21 @@
 {% assign pubs_sorted = site.data.publications | sort: "issued.date-parts[0][0]" | reverse %}
 
-{% assign seen_dois = "" %}
+{% assign seen_dois = "" | split: "" %}
 
 <ul class="list-unstyled">
   {% for publi in pubs_sorted %}
     {% assign doi_key = publi.DOI | strip | downcase %}
     {% unless seen_dois contains doi_key %}
-      {% assign seen_dois = seen_dois | append: doi_key | append: "|" %}
+      {% assign seen_dois = seen_dois | push: doi_key %}
 
-      <!-- Extract year during rendering -->
       {% assign issued_parts = publi.issued["date-parts"] %}
       {% assign year = issued_parts[0][0] | default: 0 %}
 
       <li class="media mb-1">
         <div class="media-body">
           <p>
-            <!-- title -->
-            <strong>{{ publi.title }}</strong>
+            <strong>{{ publi.title }}</strong><br>
 
-            <!-- authors -->
-            <br>
             {% assign authors = publi.author %}
             {% if authors.size > 3 %}
               {% for a in authors limit:3 %}
@@ -31,17 +27,14 @@
               {% endfor %},
             {% endif %}
 
-            <!-- year -->
             {{ year }},
 
-            <!-- journal -->
             {% if publi['container-title'] %}
               <span class="font-italic">{{ publi['container-title'] }}</span>
             {% elsif publi.URL contains "biorxiv" %}
               <span class="font-italic">bioRxiv</span>
             {% endif %}
 
-            <!-- DOI -->
             {% if publi.DOI %}
               <br><a href="https://doi.org/{{ publi.DOI }}" style="color: #006B6A;">DOI: {{ publi.DOI }}</a>
             {% endif %}
