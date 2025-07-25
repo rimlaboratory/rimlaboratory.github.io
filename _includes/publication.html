@@ -1,13 +1,13 @@
-{% assign seen_titles = "" %}
+{% assign seen_dois = "" %}
 {% assign filtered_pubs = "" | split: "" %}
 
 {% for publi in site.data.publications %}
-  {% assign title_key = publi.title | strip | downcase %}
-  {% unless seen_titles contains title_key %}
-    {% assign seen_titles = seen_titles | append: title_key | append: "|" %}
+  {% assign doi_key = publi.DOI | strip | downcase %}
+  {% unless seen_dois contains doi_key %}
+    {% assign seen_dois = seen_dois | append: doi_key | append: "|" %}
 
-    {%- assign issued_parts = publi.issued["date-parts"] %}
-    {%- assign year = issued_parts[0][0] | default: 0 -%}
+    {% assign issued_parts = publi.issued["date-parts"] %}
+    {% assign year = issued_parts[0][0] | default: 0 %}
     {% assign publi = publi | merge: {"year": year} %}
     {% assign filtered_pubs = filtered_pubs | push: publi %}
   {% endunless %}
@@ -20,9 +20,10 @@
     <div class="media-body">
       <p>
         <!-- title -->
-        "{{ publi.title }}"
+        <strong>{{ publi.title }}</strong>
 
         <!-- authors (shortened to first 3 + et al. if more than 3) -->
+        <br>
         {% assign authors = publi.author %}
         {% if authors.size > 3 %}
           {% for a in authors limit:3 %}
