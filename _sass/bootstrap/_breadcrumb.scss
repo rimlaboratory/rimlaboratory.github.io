@@ -31,21 +31,12 @@
   + .breadcrumb-item:hover::before {
     text-decoration: underline;
   }
+  // stylelint-disable-next-line no-duplicate-selectors
   + .breadcrumb-item:hover::before {
     text-decoration: none;
   }
 
   &.active {
-    color: #333; // Custom active breadcrumb color
-  }
-}
-
-// NEW: Custom styles for breadcrumb links
-.breadcrumb-item a {
-  color: #8C1515; // Stanford red
-
-  &:hover {
-    color: #5e0f0f; // Darker on hover
-    text-decoration: underline;
+    color: $breadcrumb-active-color;
   }
 }
