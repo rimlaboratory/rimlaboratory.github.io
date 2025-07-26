@@ -35,9 +35,15 @@ permalink: /research/
 
   <h3 class="mt-4">Recent Publications</h3>
   <ul class="list-unstyled">
-    {% assign pub_list = site.data.publications | sort: 'issued.date-parts[0][0]' | reverse %}
+    {% assign pub_list = site.data.publications | sort: "issued.date-parts[0][0]" | reverse %}
+    {% assign seen_dois = "" | split: "" %}
+
     {% for publi in pub_list %}
-      {%- include publication.html publi=publi -%}
+      {% assign doi_key = publi.DOI | default: "" | strip | downcase %}
+      {% unless seen_dois contains doi_key %}
+        {% assign seen_dois = seen_dois | push: doi_key %}
+        {%- include publication.html publi=publi -%}
+      {% endunless %}
     {% endfor %}
   </ul>
 </div>
