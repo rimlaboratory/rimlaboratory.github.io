@@ -32,8 +32,8 @@ permalink: /research/
     {% include research-description.md %}
   {% endcapture %}
   {{ research_md | markdownify }}
-
- <h3 class="mt-4">Recent Publications</h3>
+  
+<h3 class="mt-4">Recent Publications</h3>
 
 {% assign pubs_with_sortkey = "" | split: "" %}
 
@@ -42,10 +42,10 @@ permalink: /research/
   {% assign y = date_parts[0] | default: 0 %}
   {% assign m = date_parts[1] | default: 1 %}
   {% assign d = date_parts[2] | default: 1 %}
-  
-  {% assign ym = y | times: 100 %}
-  {% assign ymd = ym | plus: m | times: 100 | plus: d %}
-  
+
+  {% assign year_month = y | times: 100 + m %}
+  {% assign ymd = year_month | times: 100 + d %}
+
   {% assign publi = publi | merge: { "sortkey": ymd } %}
   {% assign pubs_with_sortkey = pubs_with_sortkey | push: publi %}
 {% endfor %}
