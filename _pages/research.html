@@ -43,7 +43,10 @@ permalink: /research/
   {% assign m = date_parts[1] | default: 1 %}
   {% assign d = date_parts[2] | default: 1 %}
 
-  {% assign sortkey = y | times: 10000 | plus: m | times: 100 | plus: d %}
+  {% assign y10000 = y | times: 10000 %}
+  {% assign m100 = m | times: 100 %}
+  {% assign sortkey = y10000 | plus: m100 | plus: d %}
+
   {% assign publi = publi | merge: { "sortkey": sortkey } %}
   {% assign pubs_with_sortkey = pubs_with_sortkey | push: publi %}
 {% endfor %}
