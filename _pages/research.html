@@ -33,30 +33,34 @@ permalink: /research/
   {% endcapture %}
   {{ research_md | markdownify }}
 
-  <h3 class="mt-4">Recent Publications</h3>
+ <h3 class="mt-4">Recent Publications</h3>
 
-  {% assign pubs_with_sortkey = "" | split: "" %}
+{% assign pubs_with_sortkey = "" | split: "" %}
 
-  {% for publi in site.data.publications %}
-    {% assign date_parts = publi.issued["date-parts"][0] %}
-    {% assign y = date_parts[0] | default: 0 %}
-    {% assign m = date_parts[1] | default: 1 %}
-    {% assign d = date_parts[2] | default: 1 %}
-    {% assign sortkey = y | times: 10000 | plus: m | times: 100 | plus: d %}
-    {% assign publi = publi | merge: { "sortkey": sortkey } %}
-    {% assign pubs_with_sortkey = pubs_with_sortkey | push: publi %}
+{% for publi in site.data.publications %}
+  {% assign date_parts = publi.issued["date-parts"][0] %}
+  {% assign y = date_parts[0] | default: 0 %}
+  {% assign m = date_parts[1] | default: 1 %}
+  {% assign d = date_parts[2] | default: 1 %}
+  
+  {% assign ym = y | times: 100 %}
+  {% assign ymd = ym | plus: m | times: 100 | plus: d %}
+  
+  {% assign publi = publi | merge: { "sortkey": ymd } %}
+  {% assign pubs_with_sortkey = pubs_with_sortkey | push: publi %}
+{% endfor %}
+
+{% assign sorted_pubs = pubs_with_sortkey | sort: "sortkey" | reverse %}
+{% assign seen_dois = "" | split: "" %}
+
+<ul class="list-unstyled">
+  {% for publi in sorted_pubs %}
+    {% assign doi_key = publi.DOI | default: "" | strip | downcase %}
+    {% unless seen_dois contains doi_key %}
+      {% assign seen_dois = seen_dois | push: doi_key %}
+      {%- include publication.html publi=publi -%}
+    {% endunless %}
   {% endfor %}
-
-  {% assign sorted_pubs = pubs_with_sortkey | sort: "sortkey" | reverse %}
-  {% assign seen_dois = "" | split: "" %}
-
-  <ul class="list-unstyled">
-    {% for publi in sorted_pubs %}
-      {% assign doi_key = publi.DOI | default: "" | strip | downcase %}
-      {% unless seen_dois contains doi_key %}
-        {% assign seen_dois = seen_dois | push: doi_key %}
-        {%- include publication.html publi=publi -%}
-      {% endunless %}
-    {% endfor %}
-  </ul>
+</ul>
+  
 </div>
