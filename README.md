@@ -36,7 +36,9 @@ make serve;
 
 Export the publication collection as a CSL JSON file and add to _data as publications.json.
 
-``` python
+In Zotero, create a collection with the publications of interest. Right click on the collection, select "Export Selection...", select "CSV" as the format, and select "Unicode (UTF-8)" as the character encoding. Save this file as `publications.csv`, apply the following code, and add to _data as `publications.json`:
+
+```
 import json
 
 import pandas as pd
@@ -61,15 +63,16 @@ df = df[[
     "Library Catalog"
 ]]
 
-df["Author"] = df["Author"].apply(unidecode)
-df["Title"] = df["Title"].apply(unidecode)
-df["Short Title"] = df["Short Title"].fillna("").apply(unidecode)
-df["Abstract Note"] = df["Abstract Note"].fillna("").apply(unidecode)
+for col in ["Author", "Title"]:
+    df[col] = df[col].apply(unidecode)
+
+for col in ["Short Title", "Abstract Note"]:
+    df[col] = df[col].fillna("").apply(unidecode)
 
 df_json = df.to_dict(orient="records")
 
 with open("data_/publications.json", "w") as f:
-    json.dump(df_json, f)
+    json.dump(df_json, f, indent=4)
 ```
 
 ### Add a new member
