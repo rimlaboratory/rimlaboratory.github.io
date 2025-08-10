@@ -1,374 +1,66 @@
 [
-	{
-		"id": "http://zotero.org/users/9414394/items/YV49TI5I",
-		"type": "article-journal",
-		"abstract": "Significance\n            The mechanisms plants employ to resist infection were unknown until just a few decades ago. We now understand that plants utilize diverse classes of immune receptors to recognize and respond to pathogenic microbes and pests. This paper describes the development of the plant immunity field, from early studies on the genetics of disease resistance to our increasing knowledge of how plant receptors interact with their microbial ligands, with an emphasis on the rice immune receptor XA21 and its bacterial ligand.\n          , \n            \n              In this article, we describe the development of the plant immunity field, starting with efforts to understand the genetic basis for disease resistance, which ∼30 y ago led to the discovery of diverse classes of immune receptors that recognize and respond to infectious microbes. We focus on knowledge gained from studies of the rice XA21 immune receptor that recognizes RaxX (required for activation of XA21 mediated immunity X), a sulfated microbial peptide secreted by the gram-negative bacterium\n              Xanthomonas oryzae\n              pv.\n              oryzae.\n              XA21 is representative of a large class of plant and animal immune receptors that recognize and respond to conserved microbial molecules. We highlight the complexity of this large class of receptors in plants, discuss a possible role for RaxX in\n              Xanthomonas\n              biology, and draw attention to the important role of sulfotyrosine in mediating receptor–ligand interactions.",
-		"container-title": "Proceedings of the National Academy of Sciences",
-		"DOI": "10.1073/pnas.2121568119",
-		"ISSN": "0027-8424, 1091-6490",
-		"issue": "8",
-		"journalAbbreviation": "Proc. Natl. Acad. Sci. U.S.A.",
-		"language": "en",
-		"page": "e2121568119",
-		"source": "DOI.org (Crossref)",
-		"title": "Plant immunity: Rice XA21-mediated resistance to bacterial infection",
-		"title-short": "Plant immunity",
-		"URL": "https://pnas.org/doi/full/10.1073/pnas.2121568119",
-		"volume": "119",
-		"author": [
-			{
-				"family": "Ercoli",
-				"given": "María Florencia"
-			},
-			{
-				"family": "Luu",
-				"given": "Dee Dee"
-			},
-			{
-				"family": "Rim",
-				"given": "Ellen Youngsoo"
-			},
-			{
-				"family": "Shigenaga",
-				"given": "Alexandra"
-			},
-			{
-				"family": "Teixeira de Araujo",
-				"given": "Artur"
-			},
-			{
-				"family": "Chern",
-				"given": "Mawsheng"
-			},
-			{
-				"family": "Jain",
-				"given": "Rashmi"
-			},
-			{
-				"family": "Ruan",
-				"given": "Randy"
-			},
-			{
-				"family": "Joe",
-				"given": "Anna"
-			},
-			{
-				"family": "Stewart",
-				"given": "Valley"
-			},
-			{
-				"family": "Ronald",
-				"given": "Pamela"
-			}
-		],
-		"accessed": {
-			"date-parts": [
-				[
-					"2022",
-					8,
-					24
-				]
-			]
-		},
-		"issued": {
-			"date-parts": [
-				[
-					"2022",
-					2,
-					22
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/9414394/items/QBIQFUTE",
-		"type": "article",
-		"abstract": "AbstractLinking sequence variation to phenotypic effects is critical for efficient exploitation of large genomic datasets. Here we present a novel approach combining directed evolution with protein language modeling to characterize naturally-evolved variants of a rice immune receptor. Using high-throughput directed evolution, we engineered the rice immune receptorPik-1to bind and recognize the fungal proteins Avr-PikC and Avr-PikF, which evade detection by currently characterizedPik-1alleles. A protein language model was fine-tuned on this data to correlate sequence variation with ligand binding behavior. This modeling was then used to characterizePik-1variants found in the 3,000 Rice Genomes Project dataset. Two variants scored highly for binding against Avr-PikC, andin vitroanalyses confirmed their improved ligand binding over the wild-typePik-1receptor. Overall, this machine learning approach identified promising sources of disease resistance in rice and shows potential utility for exploring the phenotypic variation of other proteins of interest.",
-		"DOI": "10.1101/2025.01.27.635131",
-		"license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
-		"publisher": "Cold Spring Harbor Laboratory",
-		"source": "Bioinformatics",
-		"title": "Combining Directed Evolution with Machine Learning Enables Accurate Genotype-to-Phenotype Predictions",
-		"URL": "http://biorxiv.org/lookup/doi/10.1101/2025.01.27.635131",
-		"author": [
-			{
-				"family": "Howard",
-				"given": "Alexander J."
-			},
-			{
-				"family": "Rim",
-				"given": "Ellen Y."
-			},
-			{
-				"family": "Garrett",
-				"given": "Oscar D."
-			},
-			{
-				"family": "Shim",
-				"given": "Yejin"
-			},
-			{
-				"family": "Notwell",
-				"given": "James H."
-			},
-			{
-				"family": "Ronald",
-				"given": "Pamela C."
-			}
-		],
-		"accessed": {
-			"date-parts": [
-				[
-					"2025",
-					7,
-					20
-				]
-			]
-		},
-		"issued": {
-			"date-parts": [
-				[
-					"2025",
-					1,
-					29
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/9414394/items/SQFTM4C6",
-		"type": "article-journal",
-		"abstract": "AbstractClimate change is a defining challenge of the 21st century, and this decade is a critical time for action to mitigate the worst effects on human populations and ecosystems. Plant science can play an important role in developing crops with enhanced resilience to harsh conditions (e.g. heat, drought, salt stress, flooding, disease outbreaks) and engineering efficient carbon-capturing and carbon-sequestering plants. Here, we present examples of research being conducted in these areas and discuss challenges and open questions as a call to action for the plant science community.",
-		"container-title": "The Plant Cell",
-		"DOI": "10.1093/plcell/koac303",
-		"ISSN": "1040-4651, 1532-298X",
-		"issue": "1",
-		"language": "en",
-		"license": "https://creativecommons.org/licenses/by/4.0/",
-		"note": "publisher: Oxford University Press (OUP)",
-		"page": "24-66",
-		"source": "Crossref",
-		"title": "Climate change challenges, plant science solutions",
-		"URL": "https://academic.oup.com/plcell/article/35/1/24/6759373",
-		"volume": "35",
-		"author": [
-			{
-				"family": "Eckardt",
-				"given": "Nancy A"
-			},
-			{
-				"family": "Ainsworth",
-				"given": "Elizabeth A"
-			},
-			{
-				"family": "Bahuguna",
-				"given": "Rajeev N"
-			},
-			{
-				"family": "Broadley",
-				"given": "Martin R"
-			},
-			{
-				"family": "Busch",
-				"given": "Wolfgang"
-			},
-			{
-				"family": "Carpita",
-				"given": "Nicholas C"
-			},
-			{
-				"family": "Castrillo",
-				"given": "Gabriel"
-			},
-			{
-				"family": "Chory",
-				"given": "Joanne"
-			},
-			{
-				"family": "DeHaan",
-				"given": "Lee R"
-			},
-			{
-				"family": "Duarte",
-				"given": "Carlos M"
-			},
-			{
-				"family": "Henry",
-				"given": "Amelia"
-			},
-			{
-				"family": "Jagadish",
-				"given": "S V Krishna"
-			},
-			{
-				"family": "Langdale",
-				"given": "Jane A"
-			},
-			{
-				"family": "Leakey",
-				"given": "Andrew D B"
-			},
-			{
-				"family": "Liao",
-				"given": "James C"
-			},
-			{
-				"family": "Lu",
-				"given": "Kuan-Jen"
-			},
-			{
-				"family": "McCann",
-				"given": "Maureen C"
-			},
-			{
-				"family": "McKay",
-				"given": "John K"
-			},
-			{
-				"family": "Odeny",
-				"given": "Damaris A"
-			},
-			{
-				"family": "Jorge De Oliveira",
-				"given": "Eder"
-			},
-			{
-				"family": "Platten",
-				"given": "J Damien"
-			},
-			{
-				"family": "Rabbi",
-				"given": "Ismail"
-			},
-			{
-				"family": "Rim",
-				"given": "Ellen Youngsoo"
-			},
-			{
-				"family": "Ronald",
-				"given": "Pamela C"
-			},
-			{
-				"family": "Salt",
-				"given": "David E"
-			},
-			{
-				"family": "Shigenaga",
-				"given": "Alexandra M"
-			},
-			{
-				"family": "Wang",
-				"given": "Ertao"
-			},
-			{
-				"family": "Wolfe",
-				"given": "Marnin"
-			},
-			{
-				"family": "Zhang",
-				"given": "Xiaowei"
-			}
-		],
-		"accessed": {
-			"date-parts": [
-				[
-					"2025",
-					7,
-					20
-				]
-			]
-		},
-		"issued": {
-			"date-parts": [
-				[
-					"2023",
-					1,
-					2
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/9414394/items/TLJ6LL8K",
-		"type": "article",
-		"abstract": "AbstractRapid development of immune receptors that protect crops from emerging pathogens is a critical challenge1,2. While novel immune receptors that recognize previously undetected pathogen effectors could provide protection against a wider range of pathogens, engineering such receptors has been constrained by the low throughput and speed ofin plantatesting. We established yeast surface display as a high throughput platform to recapitulate plant immune receptor-ligand interactions and evolve new binding capabilities. Using this directed evolution platform, we engineered the ligand binding domain of the rice immune receptor Pik-1 to recognize diverse effectors from the fast-evolving fungal pathogenMagnaporthe oryzae.Our approach yielded Pik-1 ligand binding domains with affinity for variants of theM. oryzaeeffector Avr-Pik that previously escaped detection by known rice alleles of Pik-1, within plantaassays confirming functional recognition of these effectors. Additional rounds of mutagenesis and selection led to a Pik-1 domain that binds all tested Avr-Pik variants as well as the evolutionarily divergent effector AvrPiz-t. These results demonstrate the potential of directed evolution to engineer immune receptors with new-to-nature recognition of a wide range of pathogen-derived ligands and accelerate development of broad spectrum resistance in crops.",
-		"DOI": "10.1101/2024.09.30.614878",
-		"license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
-		"publisher": "Cold Spring Harbor Laboratory",
-		"source": "Plant Biology",
-		"title": "Directed Evolution of a Plant Immune Receptor for Broad Spectrum Effector Recognition",
-		"URL": "http://biorxiv.org/lookup/doi/10.1101/2024.09.30.614878",
-		"author": [
-			{
-				"family": "Rim",
-				"given": "Ellen Y."
-			},
-			{
-				"family": "Garrett",
-				"given": "Oscar D."
-			},
-			{
-				"family": "Howard",
-				"given": "Alexander J."
-			},
-			{
-				"family": "Shim",
-				"given": "Yejin"
-			},
-			{
-				"family": "Li",
-				"given": "Yuanyuan"
-			},
-			{
-				"family": "Van Dyke",
-				"given": "Jonathan E."
-			},
-			{
-				"family": "Packer",
-				"given": "Ryan C."
-			},
-			{
-				"family": "Ho",
-				"given": "Nguyen"
-			},
-			{
-				"family": "Jain",
-				"given": "Rashmi"
-			},
-			{
-				"family": "Stewart",
-				"given": "Valley"
-			},
-			{
-				"family": "Dinesh-Kumar",
-				"given": "Savithramma P."
-			},
-			{
-				"family": "Notwell",
-				"given": "James H."
-			},
-			{
-				"family": "Ronald",
-				"given": "Pamela C."
-			}
-		],
-		"accessed": {
-			"date-parts": [
-				[
-					"2025",
-					7,
-					20
-				]
-			]
-		},
-		"issued": {
-			"date-parts": [
-				[
-					"2024",
-					10,
-					1
-				]
-			]
-		}
-	}
+    {
+        "Item Type": "preprint",
+        "Publication Year": 2025,
+        "Author": "Rim, Ellen Y.; Garrett, Oscar D.; Howard, Alexander J.; Shim, Yejin; Li, Yuanyuan; Dyke, Jonathan E. Van; Packer, Ryan C.; Ho, Nguyen; Jain, Rashmi; Stewart, Valley; Dinesh-Kumar, Savithramma P.; Notwell, James H.; Ronald, Pamela C.",
+        "Title": "Directed Evolution of a Plant Immune Receptor for Broad Spectrum Effector Recognition",
+        "Short Title": "",
+        "Publication Title": NaN,
+        "DOI": "10.1101/2024.09.30.614878",
+        "Url": "https://www.biorxiv.org/content/10.1101/2024.09.30.614878v2",
+        "Abstract Note": "Rapid development of immune receptors that protect crops from emerging pathogens is a critical challenge 1,2. While novel immune receptors that recognize previously undetected pathogen effectors could provide protection against a wider range of pathogens, engineering such receptors has been constrained by the low throughput and speed of in planta testing. We established yeast surface display as a high throughput platform to recapitulate plant immune receptor-ligand interactions and evolve new binding capabilities. Using this directed evolution platform, we engineered the ligand binding domain of the rice immune receptor Pik-1 to recognize diverse effectors from the fast-evolving fungal pathogen Magnaporthe oryzae. Our approach yielded Pik-1 ligand binding domains with affinity for variants of the M. oryzae effector Avr-Pik that previously escaped detection by known rice alleles of Pik-1, with in planta assays confirming functional recognition of these effectors. Additional rounds of mutagenesis and selection led to a Pik-1 domain that binds all tested Avr-Pik variants as well as the evolutionarily divergent effector AvrPiz-t. These results demonstrate the potential of directed evolution to engineer immune receptors with new-to-nature recognition of a wide range of pathogen-derived ligands and accelerate development of broad spectrum resistance in crops.",
+        "Date": "2025-02-04",
+        "Pages": NaN,
+        "Issue": NaN,
+        "Volume": NaN,
+        "Library Catalog": "bioRxiv"
+    },
+    {
+        "Item Type": "journalArticle",
+        "Publication Year": 2023,
+        "Author": "Eckardt, Nancy A; Ainsworth, Elizabeth A; Bahuguna, Rajeev N; Broadley, Martin R; Busch, Wolfgang; Carpita, Nicholas C; Castrillo, Gabriel; Chory, Joanne; DeHaan, Lee R; Duarte, Carlos M; Henry, Amelia; Jagadish, S V Krishna; Langdale, Jane A; Leakey, Andrew D B; Liao, James C; Lu, Kuan-Jen; McCann, Maureen C; McKay, John K; Odeny, Damaris A; Jorge de Oliveira, Eder; Platten, J Damien; Rabbi, Ismail; Rim, Ellen Youngsoo; Ronald, Pamela C; Salt, David E; Shigenaga, Alexandra M; Wang, Ertao; Wolfe, Marnin; Zhang, Xiaowei",
+        "Title": "Climate change challenges, plant science solutions",
+        "Short Title": "",
+        "Publication Title": "The Plant Cell",
+        "DOI": "10.1093/plcell/koac303",
+        "Url": "https://doi.org/10.1093/plcell/koac303",
+        "Abstract Note": "Climate change is a defining challenge of the 21st century, and this decade is a critical time for action to mitigate the worst effects on human populations and ecosystems. Plant science can play an important role in developing crops with enhanced resilience to harsh conditions (e.g. heat, drought, salt stress, flooding, disease outbreaks) and engineering efficient carbon-capturing and carbon-sequestering plants. Here, we present examples of research being conducted in these areas and discuss challenges and open questions as a call to action for the plant science community.",
+        "Date": "2023-01-01",
+        "Pages": "24-66",
+        "Issue": 1.0,
+        "Volume": 35.0,
+        "Library Catalog": "Silverchair"
+    },
+    {
+        "Item Type": "preprint",
+        "Publication Year": 2025,
+        "Author": "Howard, Alexander J.; Rim, Ellen Y.; Garrett, Oscar D.; Shim, Yejin; Notwell, James H.; Ronald, Pamela C.",
+        "Title": "Combining Directed Evolution with Machine Learning Enables Accurate Genotype-to-Phenotype Predictions",
+        "Short Title": "",
+        "Publication Title": NaN,
+        "DOI": "10.1101/2025.01.27.635131",
+        "Url": "https://www.biorxiv.org/content/10.1101/2025.01.27.635131v1",
+        "Abstract Note": "Linking sequence variation to phenotypic effects is critical for efficient exploitation of large genomic datasets. Here we present a novel approach combining directed evolution with protein language modeling to characterize naturally-evolved variants of a rice immune receptor. Using high-throughput directed evolution, we engineered the rice immune receptor Pik-1 to bind and recognize the fungal proteins Avr-PikC and Avr-PikF, which evade detection by currently characterized Pik-1 alleles. A protein language model was fine-tuned on this data to correlate sequence variation with ligand binding behavior. This modeling was then used to characterize Pik-1 variants found in the 3,000 Rice Genomes Project dataset. Two variants scored highly for binding against Avr-PikC, and in vitro analyses confirmed their improved ligand binding over the wild-type Pik-1 receptor. Overall, this machine learning approach identified promising sources of disease resistance in rice and shows potential utility for exploring the phenotypic variation of other proteins of interest.",
+        "Date": "2025-01-29",
+        "Pages": NaN,
+        "Issue": NaN,
+        "Volume": NaN,
+        "Library Catalog": "bioRxiv"
+    },
+    {
+        "Item Type": "journalArticle",
+        "Publication Year": 2022,
+        "Author": "Ercoli, Maria Florencia; Luu, Dee Dee; Rim, Ellen Youngsoo; Shigenaga, Alexandra; Teixeira de Araujo, Artur; Chern, Mawsheng; Jain, Rashmi; Ruan, Randy; Joe, Anna; Stewart, Valley; Ronald, Pamela",
+        "Title": "Plant immunity: Rice XA21-mediated resistance to bacterial infection",
+        "Short Title": "Plant immunity",
+        "Publication Title": "Proceedings of the National Academy of Sciences",
+        "DOI": "10.1073/pnas.2121568119",
+        "Url": "https://www.pnas.org/doi/full/10.1073/pnas.2121568119",
+        "Abstract Note": "In this article, we describe the development of the plant immunity field, starting with efforts to understand the genetic basis for disease resistance, which ~30 y ago led to the discovery of diverse classes of immune receptors that recognize and respond to infectious microbes. We focus on knowledge gained from studies of the rice XA21 immune receptor that recognizes RaxX (required for activation of XA21 mediated immunity X), a sulfated microbial peptide secreted by the gram-negative bacterium Xanthomonas oryzae pv. oryzae. XA21 is representative of a large class of plant and animal immune receptors that recognize and respond to conserved microbial molecules. We highlight the complexity of this large class of receptors in plants, discuss a possible role for RaxX in Xanthomonas biology, and draw attention to the important role of sulfotyrosine in mediating receptor-ligand interactions.",
+        "Date": "2022-02-22",
+        "Pages": "e2121568119",
+        "Issue": 8.0,
+        "Volume": 119.0,
+        "Library Catalog": "pnas.org (Atypon)"
+    }
 ]
