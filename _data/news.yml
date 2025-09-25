@@ -5,7 +5,8 @@
   content: "We are in the Shriram Center! Current pipette-to-human ratio: high"
 
 - date: 2025-09-15
-  title: "New lab member!"
+  title: "New lab member"
   tags:
     - lab
-  content: "Claudia Phillips from BioE joins the lab. Welcome Claudia!!"
+  image: /assets/images/new_1.jpeg
+  content: "Claudia Phillips from BioE joins the lab. Welcome Claudia!"
