@@ -44,14 +44,21 @@ Plants are increasingly vulnerable to environmental stressors—such as pathogen
   <h2 class="mb-4">News</h2>
   <ul class="list-unstyled">
     {% for item in site.data.news %}
-      <li class="mb-4 d-flex">
-        {% if item.image %}
-          <img src="{{ item.image }}" alt="News image" style="width: 100px; height: auto; margin-right: 1rem;">
-        {% endif %}
-        <div>
+      <li class="mb-4 d-flex justify-content-between align-items-start">
+        <!-- Text first so it stays on the left -->
+        <div class="me-3" style="flex: 1;">
           <strong>{{ item.date }} — {{ item.title }}</strong><br>
           {{ item.content | markdownify }}
         </div>
+
+        <!-- Image second so it sits on the right -->
+        {% if item.image %}
+          <div style="flex: 0 0 120px;">
+            <img src="{{ item.image }}"
+                 alt="News image"
+                 style="width: 120px; height: auto; object-fit: cover;">
+          </div>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>
