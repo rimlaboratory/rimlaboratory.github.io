@@ -47,7 +47,7 @@ Plants are increasingly vulnerable to environmental stressors—such as pathogen
       <li class="mb-4 d-flex justify-content-between align-items-start">
         <!-- Text first so it stays on the left -->
         <div class="me-3" style="flex: 1;">
-          <strong>{{ item.date }} — {{ item.title }}</strong><br>
+          <strong>{{ item.date | date: "%b %-d, %Y" }} — {{ item.title }}</strong><br>
           {{ item.content | markdownify }}
         </div>
 
