@@ -1,0 +1,33 @@
+---
+layout: default
+title: News
+permalink: /news/
+---
+
+<section class="container mt-5">
+  <h1 class="mb-4">News</h1>
+
+  {% assign items = site.data.news | sort: "date" | reverse %}
+  <ul class="list-unstyled">
+    {% for item in items %}
+      <li class="mb-4 d-flex justify-content-between align-items-start">
+        <div class="me-3" style="flex:1">
+          <strong>
+            {{ item.date | date: "%b %-d, %Y" }} — {{ item.title }}
+          </strong><br>
+          {{ item.content | markdownify }}
+          {% if item.tags %}
+            <div class="mt-1 small text-muted">
+              {% for t in item.tags %}#{{ t }}{% unless forloop.last %} · {% endunless %}{% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        {% if item.image %}
+          <div style="flex:0 0 200px">
+            <img src="{{ item.image }}" alt="News image" style="width:200px; height:auto; object-fit:cover;">
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
