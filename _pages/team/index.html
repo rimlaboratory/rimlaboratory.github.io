@@ -28,16 +28,19 @@ permalink: /team/
 <!-- Vertical spacer -->
 <div style="height: 3rem;"></div>
 
-{%- comment -%}
-<!-- Current Members -->
-<h2 class="mb-3"><a id="current"></a>Members</h2>
-{%- endcomment -%}
+<!-- Content wrapper with responsive spacing -->
+<section class="container my-4 my-md-5">
+  {%- comment -%}
+  <!-- Current Members -->
+  <h2 class="mb-3"><a id="current"></a>Members</h2>
+  {%- endcomment -%}
 
-{% assign members = site.posts | where: 'category', 'current' | sort: 'date' %}
-<ul class="list-unstyled">
-  {% for member in members %}
-    <li>
-      {%- include team_member.html -%}
-    </li>
-  {% endfor %}
-</ul>
+  {% assign members = site.posts | where: 'category', 'current' | sort: 'date' %}
+  <ul class="list-unstyled m-0 p-0">
+    {% for member in members %}
+      <li class="mb-4">
+        {%- include team_member.html -%}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
