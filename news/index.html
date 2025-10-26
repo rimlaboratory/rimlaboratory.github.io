@@ -8,20 +8,13 @@ permalink: /news/
   <ul class="list-unstyled">
     {% assign items = site.data.news | sort: "date" | reverse %}
     {% for item in items %}
-      <li class="mb-4 d-flex justify-content-between align-items-start">
-        <div class="me-3" style="flex:1;">
+      <li class="mb-4 d-flex flex-column flex-md-row align-items-start">
+        <div class="flex-grow-1 me-0 me-md-3">
           <strong>
-            {% if item.date %}
-              {{ item.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if item.title %}
-              {% if item.date %} — {% endif %}{{ item.title }}
-            {% endif %}
+            {% if item.date %}{{ item.date | date: "%b %-d, %Y" }}{% endif %}
+            {% if item.title %}{% if item.date %} — {% endif %}{{ item.title }}{% endif %}
           </strong><br>
-
-          {% if item.content %}
-            {{ item.content | markdownify }}
-          {% endif %}
+          {% if item.content %}{{ item.content | markdownify }}{% endif %}
 
           {% if item.tags and item.tags.size > 0 %}
             <div class="mt-1 small text-muted">
@@ -31,11 +24,12 @@ permalink: /news/
         </div>
 
         {% if item.image %}
-          <div style="flex:0 0 200px;">
+          <div class="flex-shrink-0 mt-3 mt-md-0" style="width:200px;max-width:100%;">
             <img
               src="{{ site.baseurl }}{{ item.image }}"
               alt="{{ item.title | default: 'News image' }}"
-              style="width:200px;height:auto;object-fit:cover;"
+              class="img-fluid rounded"
+              style="object-fit:cover;"
               loading="lazy" decoding="async">
           </div>
         {% endif %}
