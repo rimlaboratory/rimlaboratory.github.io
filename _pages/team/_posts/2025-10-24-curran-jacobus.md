@@ -2,7 +2,7 @@
 layout: member
 category: current
 title: 'Curran Jacobus'
-image: shriram.jpg
+image: curran-2025.jpg
 role: Undergraduate Researcher
 email: cjacobus[at]stanford[dot]edu 
 permalink: 'team/curran-jacobus'
