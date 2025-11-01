@@ -8,8 +8,9 @@ permalink: /news/
   <ul class="list-unstyled">
     {% assign items = site.data.news | sort: "date" | reverse %}
     {% for item in items %}
-      <li class="mb-4 d-flex flex-column flex-md-row align-items-start">
-        <div class="flex-grow-1 me-0 me-md-3">
+      <li class="mb-4 d-flex flex-column flex-md-row align-items-start" style="gap: 1rem;">
+        <!-- text -->
+        <div class="flex-grow-1 me-0 me-md-4">
           <strong>
             {% if item.date %}{{ item.date | date: "%b %-d, %Y" }}{% endif %}
             {% if item.title %}{% if item.date %} — {% endif %}{{ item.title }}{% endif %}
