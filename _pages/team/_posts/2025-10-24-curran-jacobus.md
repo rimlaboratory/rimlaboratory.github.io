@@ -17,4 +17,4 @@ education:
 ---
 
 Curran is an undergraduate researcher pursuing studies in Chemical Engineering and Chemistry. Co-advised by Prof. Beth Sattely, he is interested in the roles of immune proteins and small molecules in plant 
-defense. Outside of the lab, Curran enjoys hiking and mountain biking
+defense. Outside of the lab, Curran enjoys hiking and mountain biking.
