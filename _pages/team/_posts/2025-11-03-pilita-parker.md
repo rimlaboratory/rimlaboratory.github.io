@@ -4,8 +4,8 @@ title: 'Pilita Parker'
 category: current
 image: 'pilita-2025.png'
 role: Administrative Associate
-email: yrim[at]stanford[dot]edu
-permalink: 'team/ellen-rim'
+email: pcparker[at]stanford[dot]edu
+permalink: 'team/pilita-parker'
 social:
 twitter: 
 bluesky: 
