@@ -1,28 +1,31 @@
-<li class="media mb-5 d-flex align-items-center" style="font-style: normal;">
-  <img
-    class="align-self-center mr-3"
-    src="/assets/images/team/{{ member.image }}"
-    style="max-width: 200px; filter: grayscale(100%); border-radius: 50%;"
-    alt="{{ member.title }}"
-  >
-
-  <div class="media-body">
-    <h5 class="mt-0" style="font-style: normal;">
-      <a href="{{ member.url }}" style="color: #006B6A; font-style: normal;">
-        {{ member.title }}
-      </a>
-    </h5>
-
-    <p style="font-size: 1rem; margin-bottom: 0;">
-      {{ member.role }}
-    </p>
-
-    {% if member.email %}
-      <p style="font-size: 1rem; margin-top: 0;">
-        <a href="mailto:{{ member.email }}" style="color: #555;">
-          {{ member.email }}
-        </a>
-      </p>
-    {% endif %}
+<div class="row">
+  {% for member in site.team %}
+  <div class="col-md-6 mb-5">
+    <div class="media d-flex align-items-center" style="font-style: normal;">
+      <img
+        class="align-self-center mr-3"
+        src="/assets/images/team/{{ member.image }}"
+        style="max-width: 200px; filter: grayscale(100%); border-radius: 50%;"
+        alt="{{ member.title }}"
+      >
+      <div class="media-body">
+        <h5 class="mt-0" style="font-style: normal;">
+          <a href="{{ member.url }}" style="color: #006B6A; font-style: normal;">
+            {{ member.title }}
+          </a>
+        </h5>
+        <p style="font-size: 1rem; margin-bottom: 0;">
+          {{ member.role }}
+        </p>
+        {% if member.email %}
+          <p style="font-size: 1rem; margin-top: 0;">
+            <a href="mailto:{{ member.email }}" style="color: #555;">
+              {{ member.email }}
+            </a>
+          </p>
+        {% endif %}
+      </div>
+    </div>
   </div>
-</li>
+  {% endfor %}
+</div>
