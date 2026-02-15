@@ -1,5 +1,6 @@
 <div class="row">
-  {% for member in site.team %}
+  {% assign team_members = site.categories.current %}
+  {% for member in team_members %}
   <div class="col-md-6 mb-5">
     <div class="media d-flex align-items-center" style="font-style: normal;">
       <img
