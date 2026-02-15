@@ -1,21 +1,25 @@
 ---
 layout: default
 ---
-
 <div class="text-center mt-5">
     <!-- Avatar -->
     <img src="/assets/images/team/{{ page.image }}"
          style="filter: grayscale(100%); max-width: 350px; border-radius: 50%; margin-bottom: 20px;" />
-
     <!-- Name & Role -->
     <h1 style="font-size: 1.75rem;">{{ page.title }}</h1>
     <h3 style="font-size: 1.25rem;">{{ page.role }}</h3>
-
+    <!-- Email -->
+    {% if page.email %}
+    <p style="font-size: 1rem; margin-top: 10px;">
+        <a href="mailto:{{ page.email }}" style="color: #555;">
+            {{ page.email }}
+        </a>
+    </p>
+    {% endif %}
     <!-- Social -->
     {% assign member = page %}
     {%- include team_member_social.html -%}
 </div>
-
 <!-- Education -->
 {% if page.education %}
 <div>
@@ -27,7 +31,6 @@ layout: default
     </ul>
 </div>
 {% endif %}
-
 <!-- Bio -->
 <div style="font-style: normal;">
     {{ content }}
