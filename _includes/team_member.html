@@ -1,5 +1,5 @@
 <div class="row">
-  {% assign team_members = site.categories.current %}
+  {% assign team_members = site.categories.current | sort: "date" %}
   {% for member in team_members %}
   <div class="col-md-6 mb-5">
     <div class="media d-flex align-items-center" style="font-style: normal;">
