@@ -2,7 +2,7 @@
 layout: member
 category: current
 title: 'Claudia Phillips'
-image: new_1.jpeg
+image: claudia-2026.jpg
 role: PhD Student
 email: phillicl[at]stanford[dot]edu 
 permalink: 'team/claudia-phillips'
