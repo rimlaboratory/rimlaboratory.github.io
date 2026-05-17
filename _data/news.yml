@@ -8,7 +8,7 @@
   title: "New lab member"
   tags:
     - lab
-  image: /assets/images/new_1.jpeg
+  image: /assets/images/news/new_1.jpeg
   content: "Claudia Phillips from BioE joins the lab. Welcome Claudia!"
 
 - date: 2025-10-31
@@ -16,14 +16,14 @@
   tags:
     - lab
     - fun
-  image: /assets/images/pumpkin.jpeg
+  image: /assets/images/news/pumpkin.jpeg
   content: "Welcome to the lab, Curran! Our first lab project, 'the pumpkin cell,' enters the BioE pumpkin contest."
 
 - date: 2025-12-09
   title: "Peter joins + first quarter in the rearview"
   tags:
     - lab
-  image: /assets/images/books.jpeg
+  image: /assets/images/news/books.jpeg
   content: "Welcome Peter! Wrapping up our last group chat of the year with some reading recommendations."
 
 - date: 2026-02-11
