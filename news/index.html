@@ -24,16 +24,16 @@ permalink: /news/
           {% endif %}
         </div>
 
-        {% if item.image %}
-          <div class="flex-shrink-0 mt-3 mt-md-0" style="width:200px;max-width:100%;">
-            <img
-              src="{{ site.baseurl }}{{ item.image }}"
-              alt="{{ item.title | default: 'News image' }}"
-              class="img-fluid rounded"
-              style="object-fit:cover;"
-              loading="lazy" decoding="async">
-          </div>
-        {% endif %}
+{% if item.image %}
+  <div class="flex-shrink-0 mt-3 mt-md-0" style="max-width:280px; width:100%;">
+    <img
+      src="{{ site.baseurl }}{{ item.image }}"
+      alt="{{ item.title | default: 'News image' }}"
+      class="img-fluid rounded"
+      style="width:100%; height:auto;"
+      loading="lazy" decoding="async">
+  </div>
+{% endif %}
       </li>
     {% endfor %}
   </ul>
