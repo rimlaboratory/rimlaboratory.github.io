@@ -46,8 +46,8 @@
   content: "Claudia passes her BioE quals and we celebrate with cake. Congratulations!"
 
   - date: 2026-06-23
-  title: "Inaugural lab retreat"
-  tags:
-    - fun
-  image: /assets/images/news/retreat.jpeg
-  content: "Our first lab retreat featured sea otters in Elkhorn Slough and smores."
+    title: "Inaugural lab retreat"
+    tags:
+      - fun
+    image: /assets/images/news/retreat.jpeg
+    content: "Our first lab retreat featured sea otters in Elkhorn Slough and smores."
