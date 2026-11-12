@@ -1,7 +1,6 @@
 ---
 ---
 
-// ---- must come BEFORE the bootstrap import ----
 $container-max-widths: (
   sm: 540px,
   md: 720px,
@@ -11,12 +10,3 @@ $container-max-widths: (
 
 @import "bootstrap";
 @import "fontawesome";
-
-// ---- other custom overrides ----
-
-@media (min-width: 1200px) {
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
