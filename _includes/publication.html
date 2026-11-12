@@ -2,7 +2,7 @@
   <div class="media-body">
     <p style="text-align: left;">
 
-      <!-- authors: "M Zhang" style, first three + senior author -->
+      <!-- authors: "M Zhang" style -->
       {%- assign authors = publi.Author | split: '; ' -%}
       {%- assign author_count = authors | size -%}
       {%- for author in authors -%}
@@ -29,23 +29,6 @@
         {%- elsif forloop.index == 4 -%}
           <span class="font-italic">et al.</span>,
         {%- endif -%}
-      {%- endfor %}<br>
+      {%- endfor %}
 
-      <!-- title, linked to DOI -->
-      {% if publi.DOI %}
-        <strong><a href="https://doi.org/{{ publi.DOI }}" style="color: inherit;">{{ publi.Title }}</a></strong><br>
-      {% else %}
-        <strong>{{ publi.Title }}</strong><br>
-      {% endif %}
-
-      <!-- journal + year -->
-      {% if publi.Url contains "biorxiv" %}
-        <span class="font-italic" style="color: #006B6A;">bioRxiv</span>.
-      {% else %}
-        <span class="font-italic">{{ publi['Publication Title'] }}</span>.
-      {% endif %}
-      {{ publi['Publication Year'] | to_integer }}.
-
-    </p>
-  </div>
-</li>
+      <!-- title, linked
