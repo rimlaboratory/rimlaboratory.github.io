@@ -1,14 +1,21 @@
 ---
 ---
 
+// ---- must come BEFORE the bootstrap import ----
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1800px
+);
+
 @import "bootstrap";
 @import "fontawesome";
 
-// ---- custom overrides to increase content screen width ----
+// ---- other custom overrides ----
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1800px;
     padding-left: 2rem;
     padding-right: 2rem;
   }
