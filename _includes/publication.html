@@ -1,39 +1,51 @@
-<li class="media mb-1">
+<li class="media mb-3">
   <div class="media-body">
-    <p>
-      <!-- article title -->
-      <strong>{{ publi.Title }}</strong><br>
+    <p style="text-align: left;">
 
-      <!-- author -->
-      {% assign authors = publi.Author | split: '; ' %}
-      {% assign author_count = authors | size %}
+      <!-- authors: "M Zhang" style, first three + senior author -->
+      {%- assign authors = publi.Author | split: '; ' -%}
+      {%- assign author_count = authors | size -%}
+      {%- for author in authors -%}
+        {%- assign show = false -%}
+        {%- if author_count <= 4 -%}
+          {%- assign show = true -%}
+        {%- elsif forloop.index <= 3 or forloop.last -%}
+          {%- assign show = true -%}
+        {%- endif -%}
 
-      {% if author_count > 3 %}
-        {% assign first_three = authors | slice: 0, 3 %}
-        {% for author in first_three %}
-          {{ author }}{% if forloop.last == false %}; {% endif %}
-        {% endfor %}
-        <span class="font-italic">et al.</span>,
-      {% else %}
-        {% for author in authors %}
-          {{ author }}{% if forloop.last == false %}; {% endif %}
-        {% endfor %}
-      {% endif %}
+        {%- if show -%}
+          {%- assign parts = author | split: ', ' -%}
+          {%- assign surname = parts | first -%}
+          {%- if parts.size > 1 -%}
+            {%- assign given = parts[1] | split: ' ' -%}
+            {%- capture initials -%}
+              {%- for g in given -%}{{ g | slice: 0 }}{%- endfor -%}
+            {%- endcapture -%}
+            {{ initials }} {{ surname }}
+          {%- else -%}
+            {{ surname }}
+          {%- endif -%}
+          {%- if forloop.last %}.{% else %}, {% endif -%}
+        {%- elsif forloop.index == 4 -%}
+          <span class="font-italic">et al.</span>,
+        {%- endif -%}
+      {%- endfor %}<br>
 
-      <!-- year -->
-      {{ publi['Publication Year'] | to_integer }},
-
-      <!-- journal -->
-      {% if publi.Url contains "biorxiv" %}
-        <span class="font-italic">bioRxiv</span>
-      {% else %}
-        <span class="font-italic">{{ publi['Publication Title'] }}</span>,
-      {% endif %}
-
-      <!-- DOI -->
+      <!-- title, linked to DOI -->
       {% if publi.DOI %}
-        <a href="https://doi.org/{{ publi.DOI }}" style="color: #006B6A;">DOI: {{ publi.DOI }}</a>
+        <strong><a href="https://doi.org/{{ publi.DOI }}" style="color: inherit;">{{ publi.Title }}</a></strong><br>
+      {% else %}
+        <strong>{{ publi.Title }}</strong><br>
       {% endif %}
+
+      <!-- journal + year -->
+      {% if publi.Url contains "biorxiv" %}
+        <span class="font-italic" style="color: #006B6A;">bioRxiv</span>.
+      {% else %}
+        <span class="font-italic">{{ publi['Publication Title'] }}</span>.
+      {% endif %}
+      {{ publi['Publication Year'] | to_integer }}.
+
     </p>
   </div>
 </li>
