@@ -51,3 +51,18 @@
     - fun
   image: /assets/images/news/retreat.jpeg
   content: "Our first lab retreat featured sea otters in Elkhorn Slough and smores."
+
+- date: 2026-09-22
+  title: "First posters"
+  tags:
+    - lab
+  image: /assets/images/news/poster_pc.jpeg
+  content: "Curran, Peter, and Claudia present at Bio-X USRP, ChemE REU, and BioE poster sessions at the end of summer."
+  
+- date: 2026-11-02
+  title: "Grace passes quals and Guy joins"
+  tags:
+    - lab
+    - celebrate
+  content: "Grace passes her ChemE quals and Guy starts in the lab. We celebrate with cupcakes!"
+  
