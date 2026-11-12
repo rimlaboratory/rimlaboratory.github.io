@@ -2,12 +2,12 @@
   <div class="media-body">
     <p style="text-align: left;">
 
-      <!-- authors: "Rim E" style; abridged only past 15 -->
+      <!-- authors: "Rim E" style; abridged only past 10 -->
       {%- assign authors = publi.Author | split: '; ' -%}
       {%- assign author_count = authors | size -%}
       {%- for author in authors -%}
         {%- assign show = false -%}
-        {%- if author_count <= 15 or forloop.index <= 15 -%}
+        {%- if author_count <= 10 or forloop.index <= 10 -%}
           {%- assign show = true -%}
         {%- endif -%}
 
