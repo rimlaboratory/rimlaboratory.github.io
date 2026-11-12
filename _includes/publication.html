@@ -2,14 +2,12 @@
   <div class="media-body">
     <p style="text-align: left;">
 
-      <!-- authors: "Zhang M" style -->
+      <!-- authors: "M Zhang" style; abridged only past 15 -->
       {%- assign authors = publi.Author | split: '; ' -%}
       {%- assign author_count = authors | size -%}
       {%- for author in authors -%}
         {%- assign show = false -%}
-        {%- if author_count <= 4 -%}
-          {%- assign show = true -%}
-        {%- elsif forloop.index <= 3 or forloop.last -%}
+        {%- if author_count <= 15 or forloop.index <= 15 -%}
           {%- assign show = true -%}
         {%- endif -%}
 
@@ -21,13 +19,13 @@
             {%- capture initials -%}
               {%- for g in given -%}{{ g | slice: 0 }}{%- endfor -%}
             {%- endcapture -%}
-            {{ surname }} {{ initials }}
+            {{ initials }} {{ surname }}
           {%- else -%}
             {{ surname }}
           {%- endif -%}
           {%- if forloop.last %}.{% else %}, {% endif -%}
-        {%- elsif forloop.index == 4 -%}
-          <span class="font-italic">et al.</span>,
+        {%- elsif forloop.index == 16 -%}
+          <span class="font-italic">et al.</span>
         {%- endif -%}
       {%- endfor %}
 
