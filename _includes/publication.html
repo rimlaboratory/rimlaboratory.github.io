@@ -2,7 +2,7 @@
   <div class="media-body">
     <p style="text-align: left;">
 
-      <!-- authors: "M Zhang" style; abridged only past 15 -->
+      <!-- authors: "Rim E" style; abridged only past 15 -->
       {%- assign authors = publi.Author | split: '; ' -%}
       {%- assign author_count = authors | size -%}
       {%- for author in authors -%}
@@ -19,10 +19,22 @@
             {%- capture initials -%}
               {%- for g in given -%}{{ g | slice: 0 }}{%- endfor -%}
             {%- endcapture -%}
-            {{ initials }} {{ surname }}
+            {%- capture formatted -%}{{ surname }} {{ initials }}{%- endcapture -%}
           {%- else -%}
-            {{ surname }}
+            {%- assign initials = '' -%}
+            {%- capture formatted -%}{{ surname }}{%- endcapture -%}
           {%- endif -%}
+
+          <!-- lookup key: surname + first initial -->
+          {%- assign first_initial = initials | slice: 0 -%}
+          {%- capture bold_key -%}{{ surname }} {{ first_initial }}{%- endcapture -%}
+
+          {%- if site.bold_authors contains bold_key -%}
+            <strong>{{ formatted }}</strong>
+          {%- else -%}
+            {{ formatted }}
+          {%- endif -%}
+
           {%- if forloop.last %}.{% else %}, {% endif -%}
         {%- elsif forloop.index == 16 -%}
           <span class="font-italic">et al.</span>
