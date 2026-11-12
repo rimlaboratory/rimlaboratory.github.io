@@ -1,5 +1,21 @@
 [
     {
+        "Item Type": "journalArticle",
+        "Publication Year": 2026,
+        "Author": "Shim, Y.; Rim, E.Y.; Liao, J.C.-Y.; Cho, M.-J.; Austin, G.; Carlos, P.W.; Kulkarni, S.S.; Payne, R.J.; Ercoli, M.F.; Ronald, P.C.",
+        "Title": "Signaling by a tyrosine-sulfated peptide balances growth and osmotic stress response in rice",
+        "Short Title": "",
+        "Publication Title": "Proceedings of the National Academy of Sciences",
+        "DOI": "10.1073/pnas.2622107123",
+        "Url": "https://www.pnas.org/doi/10.1073/pnas.2622107123",
+        "Abstract Note": "Peptide hormone signaling coordinates plant growth with responses to osmotic stress, but how plants regulate the transition between the two has remained unclear. This study characterizes the rice PLANT PEPTIDES CONTAINING SULFATED TYROSINE 8 (OsPSY8) peptide and its role in balancing growth against osmotic stress adaptation, work with implications for improving crop resilience under drought.",
+        "Date": "2026-10-01",
+        "Pages": "e2622107123",
+        "Issue": 40,
+        "Volume": 123,
+        "Library Catalog": "pnas.org (Atypon)"
+    },
+    {
         "Item Type": "preprint",
         "Publication Year": 2025,
         "Author": "Rim, E.Y.; Garrett, O.D.; Howard, A.J.; Shim, Y.; Li, Y.; Van Dyke, J.E.; Packer, R.C.; Ho, N.; Jain, R.; Stewart, V.; Dinesh-Kumar, S.P.; Notwell, J.H.; Ronald, P.C.",
