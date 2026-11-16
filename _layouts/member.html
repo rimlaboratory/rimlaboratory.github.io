@@ -25,4 +25,24 @@ layout: default
 
     <!-- Social -->
     {% assign member = page %}
-    {%- include
+    {%- include team_member_social.html -%}
+  </div>
+
+  <!-- Education -->
+  {% if page.education %}
+  <div>
+      <h3>Education</h3>
+      <ul>
+          {% for education in page.education %}
+          <li>{{ education }}</li>
+          {% endfor %}
+      </ul>
+  </div>
+  {% endif %}
+
+  <!-- Bio -->
+  <div style="font-style: normal;">
+      {{ content }}
+  </div>
+
+</div>
