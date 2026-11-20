@@ -65,4 +65,11 @@
     - lab
     - celebrate
   content: "Grace passes her ChemE quals and Guy starts in the lab. We celebrate with cupcakes."
+
+  - date: 2026-11-17
+  title: "Making moves"
+  tags:
+    - lab
+  image: /assets/images/news/map.png
+  content: "We move from our interim space in Shriram to Clark! Current desk-to-human ratio: high"
   
